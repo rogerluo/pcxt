@@ -1,0 +1,46 @@
+body {
+	font-size: 20px;
+	background: #FFFFFF;
+}
+td {
+	font-size: 14px;
+}
+input {
+	font-size: 14px;
+	padding-top: 2px;
+}
+select {
+	font-size: 12px;
+}
+
+.txtbg
+{
+	background-color: #FFFFFF;
+	line-height: 120%;
+}
+.tdbg{
+	background:#FFFFFF;
+	line-height: 120%;
+}
+.titlebg {
+	font-weight: bold;
+	background-color: #FFFFFF;
+	line-height: 120%;
+}
+.tbbg {
+	background-color: #FFFFFF;
+}
+.title {
+	font-size: 25px;
+	font-weight: bold;
+}
+.txt {
+	line-height: 160%;
+	padding: 15px;
+	background-color: #000000;
+}
+a{text-decoration:none;} /*链接无下划线none,有为underline*/
+a:link {color: #0010ff;text-decoration: underline;} /*未访问的链接 */
+a:visited {color: #0010ff;text-decoration: underline;} /*已访问的链接*/
+a:hover{color: #ff0000;text-decoration: underline;} /*鼠标在链接上 */
+a:active {color: #ff0000;text-decoration: underline}/*点击激活链接*/

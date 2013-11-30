@@ -1,0 +1,96 @@
+数据库：course
+密码:空
+数据表名：evaluate，coursemember，courseinfo，adminuser
+其中数据表adminuser的可用数据为razorluo	luodingjia
+
+student/evaluate.asp[S]
+table evaluate
+xls			sql		asp
+课程号			courseid	courseid not null
+学号			stuid		stuid not null
+姓名			stuname		stuname not null
+教材	1		book		book not null
+课件	2		courseraw	courseraw not null
+电子教案语种	3	rawlang		rawlang not null
+授课语种	4	lang		lang
+英语授课比例	5	scale		scale not null
+上课精神	6	spirit		spirit not null
+信息量		7	info		info not null
+讲述情况	8	teachstatus	teachstatus not null
+授课学时	9	teachtime	teachtime not null
+替补授课学时	10	teachtime2	teachtime2
+替补教师名字	11	teachername2	teachername2
+停课次数	12	stoptimes	stoptimes
+停课原因	13	stopcourse	stopcourse
+补课次数	14	retimes		retimes
+总体评价	15	total		total not null
+建议		16	advice		advice
+开课时间	coursedate		coursedate*
+
+student/chklogin.asp
+table coursemember
+xls			sql		asp
+学号			stuid		stuid
+姓名			stuname		stuname
+专业			stuobject	stuobject
+学院			stucollege	stucollege
+课程号			courseid	courseid
+课程名称		coursename	coursename
+调查问卷情况		isevaluate	isevaluate
+开课时间	coursedate		coursedate*
+
+
+admin/adminupload.asp
+table courseinfo
+form upload
+xls			sql		asp
+课程号			courseid	courseid
+课程名称		coursename	coursename
+学时			coursetime	coursetime
+授课教师		courseteacher	courseteacher
+授课类型		coursetype	coursetype
+上传路径		coursefile	coursefile
+开课系			coursehost	coursehost	*
+上课时间地点		coursewhere	coursewhere	*
+
+课程号			courseid	courseid
+课程名称		coursename	coursename
+学时			coursetime	coursetime
+学分			coursecredit	coursecredit*
+授课教师		courseteacher	courseteacher
+授课教师2		courseteacher2  courseteacher2*
+授课人数		courseheadcount courseheadcount*	
+授课类型		coursetype	coursetype
+上传路径		coursefile	coursefile
+开课时间		coursedate  coursedate*
+
+
+
+admin/adminmain.asp
+table adminuser
+			sql			asp
+			adminname		adminname(session)
+			password		password
+			sysstate		sysstate
+
+admin/adminmain.asp
+form:sysstate
+session("adminname")
+session("sysstate")
+sysstate = state = rs("sysstate")
+
+admin/chkstate.asp
+check session("adminname") no to adminlogin.asp
+
+admin/adminlogin.asp
+form:adminlogin action:adminchklogin.asp
+adminname
+password
+
+
+admin/adminchklogin.asp
+adminname = adminname = razorluo
+passowrd = passowrd = luodingjia = 3597E33494CD764683FB6DE55279EE17
+sysstate = 1 表示系统开启了 sysstate = 0 表示系统关闭了
+adminname = dzyjs
+password = dzyjs = ED800F10B45C7049FD0B3310E76CCCC4

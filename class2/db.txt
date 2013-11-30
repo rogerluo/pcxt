@@ -1,0 +1,86 @@
+数据库：course
+密码:空
+数据表名：evaluate_gra，coursemember_gra，courseinfo_gra，adminuser
+其中数据表adminuser的可用数据为razorluo	luodingjia
+
+student/evaluate.asp[S]
+table evaluate_gra
+xls			sql		asp
+课程号			courseid	courseid not null
+开课时间			coursedate	coursedate not null
+学号			stuid		stuid not null
+姓名			stuname		stuname not null
+
+课程内容偏重于		coursecontent	coursecontent
+课程学习难度		coursedifficult	coursedifficult
+课程内容知识点		coursepoint	coursepoint
+课程语种建议		courselang	courselang
+
+课程对于自身知识面帮助	courseknowhelp	courseknowhelp
+课程对于自身找工作帮助	coursejobhelp	coursejobhelp
+课程是否继续		coursecontinue	coursecontinue
+
+
+student/chklogin.asp
+table coursemember_gra
+xls			sql		asp
+学号			stuid		stuid
+姓名			stuname		stuname
+专业			stuobject	stuobject
+学院			stucollege	stucollege
+课程号			courseid	courseid
+课程名称			coursename	coursename
+开课时间			coursedate	coursedate
+调查问卷情况		isevaluate	isevaluate
+调查问卷情况2		isevaluate2	isevaluate2
+
+
+
+admin/adminupload.asp
+table courseinfo_gra
+form upload
+xls			sql		asp
+课程号			courseid	courseid
+课程名称			coursename	coursename
+学时			coursetime	coursetime
+学分			coursecredit	coursecredit
+任课教师			courseteacher	courseteacher
+课程类别			coursetype	coursetype	硕士博士
+类别			coursetype2	coursetype2	学位课选修课
+开课时间			coursedate	coursedate
+上传路径			coursefile	coursefile
+
+人数			courseheadcount	courseheadcount
+支持深造			coursestudycount	coursestudycount
+支持工作			coursejobcount	coursejobcount
+支持深造名单		coursestudy	coursestudy
+支持工作名单		coursejob	coursejob
+
+admin/adminmain.asp
+table adminuser
+			sql			asp
+			adminname		adminname(session)
+			password		password
+			sysstate		sysstate
+
+admin/adminmain.asp
+form:sysstate
+session("adminname")
+session("sysstate")
+sysstate = state = rs("sysstate")
+
+admin/chkstate.asp
+check session("adminname") no to adminlogin.asp
+
+admin/adminlogin.asp
+form:adminlogin action:adminchklogin.asp
+adminname
+password
+
+
+admin/adminchklogin.asp
+adminname = adminname = razorluo
+passowrd = passowrd = luodingjia = 3597E33494CD764683FB6DE55279EE17
+sysstate = 1 表示系统开启了 sysstate = 0 表示系统关闭了
+adminname = dzyjs
+password = dzyjs = ED800F10B45C7049FD0B3310E76CCCC4
