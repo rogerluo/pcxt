@@ -1,3 +1,5 @@
+use course;
+
 alter table courseinfo 
 alter column courseid varchar(10)
 
